@@ -23,14 +23,20 @@ namespace Lastdigitsofnumber
 
         public List<BigInteger> GetNumberDigiAsList(string value)
         {
-            BigInteger parsedValue;
             List<BigInteger> listBigInt = new List<BigInteger>();
             var split = value.Split(',');
-            foreach (var item in split)
+            if (split.Length == 2)
             {
-                parsedValue = BigInteger.Parse(item);
-                listBigInt.Add(parsedValue);
+                foreach (var item in split)
+                {
+                    if (BigInteger.TryParse(item, out BigInteger bigint))
+                        listBigInt.Add(bigint);
+                    else
+                        return new List<BigInteger> { };
+                }
             }
+            else
+                return new List<BigInteger> { };
 
             return listBigInt;
         }
