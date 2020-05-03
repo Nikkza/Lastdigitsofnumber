@@ -5,11 +5,11 @@ namespace Lastdigitsofnumber
 {
     public class Logic
     {
-        public char[] LastDigitsOfaNumber(BigInteger number, long lastdigits)
+        public char[] LastDigitsOfaNumber(ulong number, ulong lastdigits)
         {
             char[] numberAsCharArray;
             if (lastdigits <= 0) return new char[] { };
-            else if (number.ToString().Length > lastdigits)
+            else if (number.ToString().Length > lastdigits.ToString().Length)
             {
                 numberAsCharArray = number.ToString()
                 .Substring(number.ToString()
@@ -21,22 +21,22 @@ namespace Lastdigitsofnumber
             return numberAsCharArray;
         }
 
-        public List<BigInteger> GetNumberDigiAsList(string value)
+        public List<ulong> GetNumberDigiAsList(string value)
         {
-            List<BigInteger> listBigInt = new List<BigInteger>();
+            List<ulong> listBigInt = new List<ulong>();
             var split = value.Split(',');
             if (split.Length == 2)
             {
                 foreach (var item in split)
                 {
-                    if (BigInteger.TryParse(item, out BigInteger bigint))
+                    if (ulong.TryParse(item.ToString(), out ulong bigint))
                         listBigInt.Add(bigint);
                     else
-                        return new List<BigInteger> { };
+                        return new List<ulong> { };
                 }
             }
             else
-                return new List<BigInteger> { };
+                return new List<ulong> { };
 
             return listBigInt;
         }

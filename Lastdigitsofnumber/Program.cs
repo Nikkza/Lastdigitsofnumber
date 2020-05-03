@@ -20,7 +20,7 @@ namespace Lastdigitsofnumber
                 var getNummbersAsList = logic.GetNumberDigiAsList(numberAndDigits);
                 if (getNummbersAsList.Count > 0)
                 {
-                    var results = logic.LastDigitsOfaNumber(getNummbersAsList[0], (long)getNummbersAsList[1]);
+                    var results = logic.LastDigitsOfaNumber(getNummbersAsList[0], getNummbersAsList[1]);
                     if (!(results.Length <= 0))
                         Console.WriteLine($"{string.Join(",", results)}");
                     else
