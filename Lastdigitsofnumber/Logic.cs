@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace Lastdigitsofnumber
@@ -24,8 +25,10 @@ namespace Lastdigitsofnumber
         public List<ulong> GetNumberDigiAsList(string value)
         {
             List<ulong> listNumbers = new List<ulong>();
+            long biggestNumber = 10000000000;
             var split = value.Split(',');
-            if (split.Length == 2)
+            var largestNumberValid = long.Parse(split[0]);
+            if (split.Length == 2 && largestNumberValid < biggestNumber)
             {
                 foreach (var item in split)
                 {

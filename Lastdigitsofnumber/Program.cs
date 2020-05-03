@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
 
 namespace Lastdigitsofnumber
 {
@@ -8,7 +6,7 @@ namespace Lastdigitsofnumber
     {
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine($"Example for using this program, {Environment.NewLine}" +
                   $"You enter these parameters in the example below. Must also be number. {Environment.NewLine}" +
                   $" {Environment.NewLine}Ex: 23457,2 the result out is 5,7");
@@ -22,13 +20,13 @@ namespace Lastdigitsofnumber
                 {
                     var results = logic.LastDigitsOfaNumber(getNummbersAsList[0], getNummbersAsList[1]);
                     if (!(results.Length <= 0))
-                        Console.WriteLine($"{string.Join(",", results)}");
+                        Console.WriteLine($"Results {string.Join(",", results)}");
                     else
                         Console.WriteLine($"null {0}");
                 }
                 else
-                    Console.WriteLine($"Must enter 2 arguments, or must be numbers");
-                
+                    Console.WriteLine($"Must enter 2 arguments, or must be numbers, or number must be < 10000000000");
+
             }
         }
     }
