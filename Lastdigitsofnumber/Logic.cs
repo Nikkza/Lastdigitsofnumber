@@ -23,14 +23,14 @@ namespace Lastdigitsofnumber
 
         public List<ulong> GetNumberDigiAsList(string value)
         {
-            List<ulong> listBigInt = new List<ulong>();
+            List<ulong> listNumbers = new List<ulong>();
             var split = value.Split(',');
             if (split.Length == 2)
             {
                 foreach (var item in split)
                 {
-                    if (ulong.TryParse(item.ToString(), out ulong bigint))
-                        listBigInt.Add(bigint);
+                    if (ulong.TryParse(item.ToString(), out ulong number))
+                        listNumbers.Add(number);
                     else
                         return new List<ulong> { };
                 }
@@ -38,7 +38,7 @@ namespace Lastdigitsofnumber
             else
                 return new List<ulong> { };
 
-            return listBigInt;
+            return listNumbers;
         }
     }
 }
