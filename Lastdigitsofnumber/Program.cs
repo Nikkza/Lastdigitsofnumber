@@ -26,7 +26,6 @@ namespace Lastdigitsofnumber
                 }
                 else
                     Console.WriteLine($"Must enter 2 arguments, or must be numbers, or number must be < 10000000000");
-
             }
         }
     }

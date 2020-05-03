@@ -26,11 +26,11 @@ namespace Lastdigitsofnumber
         {
             List<ulong> listNumbers = new List<ulong>();
             long biggestNumber = 10000000000;
-            var split = value.Split(',');
-            var largestNumberValid = long.Parse(split[0]);
-            if (split.Length == 2 && largestNumberValid < biggestNumber)
+            var splitNumbersToArray = value.Split(',');
+            var largestNumberValid = long.Parse(splitNumbersToArray[0]);
+            if (splitNumbersToArray.Length == 2 && largestNumberValid < biggestNumber)
             {
-                foreach (var item in split)
+                foreach (var item in splitNumbersToArray)
                 {
                     if (ulong.TryParse(item.ToString(), out ulong number))
                         listNumbers.Add(number);
